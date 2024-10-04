@@ -16,11 +16,31 @@ public class Ativ_estoque {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        int op;
+        
         Produto pd = new Produto();
         
         pd.setCodigo(Integer.parseInt(JOptionPane.showInputDialog("Insira o código do produto: ")));
         
         pd.setDescricao(JOptionPane.showInputDialog("Insira a descrição do produto: "));
+        
+        
+        
+        do {
+            op = (Integer.parseInt(JOptionPane.showInputDialog(null, "1-Entrada \n2-Saída \n3-Finalizar operação")));
+            switch (op) {
+                case 1:
+                    pd.registrarEntrada();
+                    break;
+                case 2:
+                    pd.registrarSaída();
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Finalizando");
+                    break;
+            }
+        } while (op != 3);
+        JOptionPane.showMessageDialog(null, "Solicitação finalizada");
         
         pd.teste();
     }

@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author Adriano
  */
 public class Produto {
-    private int codigo, saldo;
+    private int codigo, saldo, op, qtd;
     private String descricao;
     
     //CONSTRUTOR
@@ -38,7 +38,29 @@ public class Produto {
         return descricao;
     }
     
-    //teste
+    //REGISTRAR ENTRADA
+    public void registrarEntrada(){
+        qtd = (Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade do produto: ")));
+        if(qtd < 0){
+            JOptionPane.showMessageDialog(null, "Quantidade inválida!");
+        }else{
+            saldo = saldo + qtd;
+            JOptionPane.showMessageDialog(null, "Saldo total do produto "+descricao+": "+saldo);
+        }
+    }
+    
+    //REGISTRAR SAÍDA
+    public void registrarSaída(){
+        qtd = (Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade do produto: ")));
+        if(qtd > saldo){
+            JOptionPane.showMessageDialog(null, "Saldo insuficiente!");
+        }else{
+            saldo = saldo - qtd;
+            JOptionPane.showMessageDialog(null, "Saldo total do produto "+descricao+": "+saldo);
+        }
+    }
+    
+    //TESTE
     void teste(){
         JOptionPane.showMessageDialog(null, "O código do produto é: " + codigo + "\nDescrição: " + descricao);
     }
