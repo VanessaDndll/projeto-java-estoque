@@ -39,8 +39,8 @@ public class Produto {
     }
     
     //REGISTRAR ENTRADA
-    public void registrarEntrada(){
-        qtd = (Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade do produto: ")));
+    public void registrarEntrada(int codigo, String descricao, int qtd, int saldo){
+        //qtd = (Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade do produto: ")));
         if(qtd < 0){
             JOptionPane.showMessageDialog(null, "Quantidade inválida!");
         }else{
@@ -50,8 +50,8 @@ public class Produto {
     }
     
     //REGISTRAR SAÍDA
-    public void registrarSaída(){
-        qtd = (Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade do produto: ")));
+    public void registrarSaída(int codigo, String descricao, int qtd, int saldo){
+        //qtd = (Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade do produto: ")));
         if(qtd > saldo){
             JOptionPane.showMessageDialog(null, "Saldo insuficiente!");
         }else{

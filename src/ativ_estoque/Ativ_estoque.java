@@ -16,7 +16,11 @@ public class Ativ_estoque {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int op;
+        telaprincipal tp = new telaprincipal();
+        tp.setVisible(true);
+        
+        
+        /*int op;
         
         Produto pd = new Produto();
         
@@ -42,7 +46,7 @@ public class Ativ_estoque {
         } while (op != 3);
         JOptionPane.showMessageDialog(null, "Solicitação finalizada");
         
-        pd.teste();
+        pd.teste();*/
     }
     
 }
